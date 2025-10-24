@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "CoreTray (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "CoreTray (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

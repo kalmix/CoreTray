@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>CoreTray</value>
+  </data>
+	<data name="AppDescription" xml:space="preserve">
+		<value>CoreTray</value>
+  	</data>
+  <data name="Shell_CPU.Content" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="Shell_GPU.Content" xml:space="preserve">
+    <value>GPU</value>
+  </data>
+  <data name="Shell_RAM.Content" xml:space="preserve">
+    <value>RAM</value>
+  </data>
+  
+  <!-- Monitoring Settings -->
+  <data name="Settings_Monitoring.Text" xml:space="preserve">
+    <value>Monitoring Settings</value>
+  </data>
+  <data name="Settings_UpdateInterval.Text" xml:space="preserve">
+    <value>Update Interval</value>
+  </data>
+  <data name="Settings_UpdateInterval_Description.Text" xml:space="preserve">
+    <value>How often to update sensor readings (milliseconds)</value>
+  </data>
+  <data name="Settings_AutoStart.Header" xml:space="preserve">
+    <value>Auto-start monitoring</value>
+  </data>
+  <data name="Settings_AutoStart.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_AutoStart.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_MaxDataPoints.Text" xml:space="preserve">
+    <value>Maximum Chart Data Points</value>
+  </data>
+  <data name="Settings_MaxDataPoints_Description.Text" xml:space="preserve">
+    <value>Number of data points to display in charts (affects memory usage)</value>
+  </data>
+  
+  <!-- Display Settings -->
+  <data name="Settings_Display.Text" xml:space="preserve">
+    <value>Display Settings</value>
+  </data>
+  <data name="Settings_TemperatureUnit.Text" xml:space="preserve">
+    <value>Temperature Unit</value>
+  </data>
+  <data name="Settings_Temp_Celsius.Content" xml:space="preserve">
+    <value>Celsius (°C)</value>
+  </data>
+  <data name="Settings_Temp_Fahrenheit.Content" xml:space="preserve">
+    <value>Fahrenheit (°F)</value>
+  </data>
+  <data name="Settings_Temp_Kelvin.Content" xml:space="preserve">
+    <value>Kelvin (K)</value>
+  </data>
+  <data name="Settings_DecimalPrecision.Text" xml:space="preserve">
+    <value>Decimal Precision</value>
+  </data>
+  
+  <!-- Chart Settings -->
+  <data name="Settings_Charts.Text" xml:space="preserve">
+    <value>Chart Settings</value>
+  </data>
+  <data name="Settings_ChartAnimations.Header" xml:space="preserve">
+    <value>Enable Chart Animations</value>
+  </data>
+  <data name="Settings_ChartAnimations.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_ChartAnimations.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_ChartSmoothing.Header" xml:space="preserve">
+    <value>Enable Line Smoothing</value>
+  </data>
+  <data name="Settings_ChartSmoothing.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_ChartSmoothing.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_ChartSmoothness.Text" xml:space="preserve">
+    <value>Chart Line Smoothness</value>
+  </data>
+  <data name="Settings_ChartTimeWindow.Text" xml:space="preserve">
+    <value>Chart Time Window</value>
+  </data>
+
+  <!-- Startup Settings -->
+  <data name="Settings_Startup.Text" xml:space="preserve">
+    <value>Startup Settings</value>
+  </data>
+  <data name="Settings_LaunchAtStartup.Header" xml:space="preserve">
+    <value>Launch at Windows Startup</value>
+  </data>
+  <data name="Settings_LaunchAtStartup.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_LaunchAtStartup.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_StartMinimized.Header" xml:space="preserve">
+    <value>Start Minimized</value>
+  </data>
+  <data name="Settings_StartMinimized.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_StartMinimized.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_MinimizeToTray.Header" xml:space="preserve">
+    <value>Minimize to System Tray</value>
+  </data>
+  <data name="Settings_MinimizeToTray.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_MinimizeToTray.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  
+  <!-- Advanced Settings -->
+  <data name="Settings_Advanced.Text" xml:space="preserve">
+    <value>Advanced Settings</value>
+  </data>
+  <data name="Settings_DebugLogging.Header" xml:space="preserve">
+    <value>Enable Debug Logging</value>
+  </data>
+  <data name="Settings_DebugLogging.OffContent" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Settings_DebugLogging.OnContent" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Settings_ResetButton.Content" xml:space="preserve">
+    <value>Reset All Settings to Default</value>
+  </data>
+  
+  <!-- Personalization -->
+  <data name="Settings_Personalization.Text" xml:space="preserve">
+    <value>Personalization</value>
+  </data>
+  <data name="Settings_Theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  
+  <!-- About -->
+  <data name="Settings_About.Text" xml:space="preserve">
+    <value>About this application</value>
+  </data>
+  <data name="Settings_AboutDescription.Text" xml:space="preserve">
+    <value>CoreTray is a lightweight system monitoring app that allows you to view real-time CPU, GPU Temperatures and RAM usage (%)</value>
+  </data>
+  <data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
+    <value>Privacy Statement</value>
+  </data>
+  <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
+    <value>https://YourPrivacyUrlGoesHere/</value>
+  </data>
+</root>

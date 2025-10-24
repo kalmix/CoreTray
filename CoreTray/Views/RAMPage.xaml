@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="CoreTray.Views.RAMPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lvc="using:LiveChartsCore.SkiaSharpView.WinUI"
+    mc:Ignorable="d">
+
+    <Grid Margin="20">
+        <StackPanel Margin="10,-1,10,0">
+            <Grid Margin="-30,-50,0,0">
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    Spacing="8"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+                    <TextBlock 
+                        Text="{x:Bind ViewModel.UsedRamFormatted, Mode=OneWay}" 
+                        FontSize="14"
+                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                        FontStyle="Italic"/>
+                    <TextBlock 
+                        Text="GB /" 
+                        FontSize="14"
+                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                        FontStyle="Italic"/>
+                    <TextBlock 
+                        Text="{x:Bind ViewModel.TotalRamFormatted, Mode=OneWay}" 
+                        FontSize="14"
+                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                        FontStyle="Italic"/>
+                    <TextBlock 
+                        Text="GB" 
+                        FontSize="14"
+                        Foreground="{ThemeResource SystemBaseMediumColor}"
+                        FontStyle="Italic"/>
+                </StackPanel>
+
+                <StackPanel 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center">
+                    <TextBlock 
+                        Text="{x:Bind ViewModel.RamUsagePercentageFormatted, Mode=OneWay}" 
+                        Style="{StaticResource TitleLargeTextBlockStyle}"
+                        Margin="0,0,4,0"/>
+                    <TextBlock 
+                        Text="%" 
+                        Style="{StaticResource TitleLargeTextBlockStyle}" 
+                        Foreground="DodgerBlue"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <Grid CornerRadius="10" Margin="0,70,0,0">
+            <lvc:CartesianChart
+                SyncContext="{x:Bind ViewModel.Sync}"
+                Series="{x:Bind ViewModel.UsageSeries, Mode=OneWay}"
+                XAxes="{x:Bind ViewModel.XAxes, Mode=OneWay}"
+                YAxes="{x:Bind ViewModel.YAxesUsage, Mode=OneWay}"
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</Page>
