@@ -3,10 +3,7 @@
   
 
 <!-- PROJECT SHIELDS -->
-
-[![Stargazers][stars-shield]][stars-url]
-
-[![MIT License][license-shield]][license-url]
+<!-- ... I'll add this later... -->
 
   
 
