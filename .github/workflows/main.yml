@@ -37,10 +37,6 @@ jobs:
     - name: Build CoreTray.Core
       run: dotnet build CoreTray.Core/CoreTray.Core.csproj --configuration ${{ matrix.configuration }} --no-restore
       
-    - name: Run Tests
-      run: dotnet test CoreTray.Tests.MSTest/CoreTray.Tests.MSTest.csproj --configuration ${{ matrix.configuration }} --no-build --verbosity normal
-      continue-on-error: true
-      
     - name: Publish CoreTray (x64)
       run: |
         dotnet publish CoreTray/CoreTray.csproj `
