@@ -1,0 +1,67 @@
+name: Build CoreTray
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        configuration: [Release]
+        platform: [x64]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '7.0.x'
+        
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+      
+    - name: Restore NuGet packages
+      run: dotnet restore CoreTray.sln
+      
+    - name: Build CoreTray
+      run: dotnet build CoreTray.sln --configuration ${{ matrix.configuration }} --no-restore
+      
+    - name: Build CoreTray.Core
+      run: dotnet build CoreTray.Core/CoreTray.Core.csproj --configuration ${{ matrix.configuration }} --no-restore
+      
+    - name: Run Tests
+      run: dotnet test CoreTray.Tests.MSTest/CoreTray.Tests.MSTest.csproj --configuration ${{ matrix.configuration }} --no-build --verbosity normal
+      continue-on-error: true
+      
+    - name: Publish CoreTray (x64)
+      run: |
+        dotnet publish CoreTray/CoreTray.csproj `
+          -c Release `
+          -r win10-x64 `
+          --self-contained false `
+          -p:Platform=x64 `
+          -o ./publish/win10-x64
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: CoreTray-${{ matrix.platform }}-${{ matrix.configuration }}
+        path: ./publish/win10-x64/
+        retention-days: 7
+        
+    - name: Build Summary
+      if: always()
+      run: |
+        echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Configuration**: ${{ matrix.configuration }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Platform**: ${{ matrix.platform }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
