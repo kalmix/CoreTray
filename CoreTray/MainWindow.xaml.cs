@@ -90,10 +90,15 @@ public sealed partial class MainWindow : WindowEx
             
             System.Diagnostics.Debug.WriteLine($"HasSeenWelcomeDialog: {settings.HasSeenWelcomeDialog}");
 
-            // Show only if not seen before
+            
             if (!settings.HasSeenWelcomeDialog)
             {
                 System.Diagnostics.Debug.WriteLine("Showing welcome dialog...");
+                
+                // Mark as seen immediately before showing to prevent race conditions
+                settings.HasSeenWelcomeDialog = true;
+                await settingsService.SaveSettingsAsync(settings);
+                System.Diagnostics.Debug.WriteLine("Welcome dialog flag saved (true)");
                 
                 await Task.Delay(500); // 500ms
 
@@ -101,11 +106,6 @@ public sealed partial class MainWindow : WindowEx
                 var result = await welcomeDialog.ShowAsync();
                 
                 System.Diagnostics.Debug.WriteLine($"Welcome dialog result: {result}");
-                
-                settings.HasSeenWelcomeDialog = true;
-                await settingsService.SaveSettingsAsync(settings);
-                
-                System.Diagnostics.Debug.WriteLine("Welcome dialog flag saved");
             }
             else
             {
